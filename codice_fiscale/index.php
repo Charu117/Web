@@ -20,10 +20,14 @@
     </form>
 
     <?php include 'logic.php'; 
-        $str = $_POST['name'];
-        
+        $name = $_POST['name'];
+        $surname= $_POST['surname'];
+        $age = $_POST['date'];
+        $sex = $_POST['sex'];
+        $province = $_POST['province'];
+        $birthplace = $_POST['birthplace'];
 
-        var_dump(consonant_only($str));
+        var_dump(consonant_only($name));
         
     ?>
 </body>
