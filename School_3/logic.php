@@ -5,8 +5,16 @@
 //ERROR
 
 function read_file(){
-    $file = fopen("posti.txt", 'r') or die ("FILE CANNOT BE OPENED");
-    $arr = array(
+    $file = fopen("posti.txt", "r") or die ("FILE CANNOT BE OPENED");
+    $arr = array();
+
+    while(!feof($file)){
+        $row = fgets($file);
+        $arr[] = explode(" ", $row);
+    }
+    //var_dump($arr);
+
+    /* $arr = array(
         "A" => array(),
         "B" => array(),
         "C" => array(),
@@ -32,29 +40,20 @@ function read_file(){
             $arr["F"] = explode(" ", $row);
         }
         $i++;
-    }
+    } */
     fclose($file);
     return $arr;
 }
 
 function save_to_file($arr){
-    $file = fopen("posti.txt", "w") or die ("FILE CANNOT BE OPENED");
+    $file = fopen("posti_new.txt", "w") or die ("FILE CANNOT BE OPENED");
 
-    /* for($i = 'A'; $i <= 'F'; $i++){
-        for($i = 0; $i < 15; $i++){
-            
-            //fwrite($file, $arr[$i][$j]);
-        }
-        //fwrite($file, "\n");
-    } */
+    for($i=0;$i < 5;$i++){
+        $str = implode(" ", $arr[$i]);
+        fwrite($file, $str);
+        fwrite($file, "\n");
 
-    foreach($arr as $x => $x_value){
-        for($i = 0; $i < 15; $i++){
-            $str = $x_value[$i]." ";
-            fwrite($file, $str);
-            
-        }
+        
     }
-
     fclose($file);
 }
