@@ -13,6 +13,12 @@
             margin-left: 8px;
             color: grey;
         }
+        h6{
+            display: inline;
+            margin-left: 15px;
+            color: grey;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -28,9 +34,27 @@
         <input type="submit" value="Reserve" name="sub" class="btn" id="submit">
         
     </form>
+</div>
+<div class="row">
+    <div class="col s5">
+        <h6>1</h6>
+        <h6>2</h6>
+        <h6>3</h6>
+        <h6>4</h6>
+        <h6>5</h6>
+        <h6>6</h6>
+        <h6>7</h6>
+        <h6>8</h6>
+        <h6>9</h6>
+        <h6>10</h6>
+        <h6>11</h6>
+        <h6>12</h6>
+        <h6>13</h6>
+        <h6>14</h6>
+    </div>
 </div>    
 <div class="row">
-    <div class="col s5 ">
+    <div class="col s5">
         <label for="A">A</label>
         <i class="material-icons" id="A1">event_seat</i>
         <i class="material-icons" id="A2">event_seat</i>
