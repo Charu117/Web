@@ -27,9 +27,36 @@ i{
 .row {
   margin-bottom: 3px;
 }
+.header{
+  padding-left: 12px;
+  padding-top: 15px;
+  color: #9575cd;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 140px;
+}
 .header1{
   padding-left: 12px;
   padding-top: 15px;
   color: #9575cd;
   font-size: 25px;
+  margin-top: 10px;
+}
+.header2{
+  padding-left: 12px;
+  padding-top: 15px;
+  color: #9575cd;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 200px;
+}
+.form-login{
+  margin-left: 30%;
+}
+.form-register{
+  margin-left: 30%;
+
+}
+.button{
+  margin-left: 40%;
 }

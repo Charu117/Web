@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 function Login($name, $password){
     $file = fopen("./logs/logs.txt", 'r');
@@ -12,6 +12,7 @@ function Login($name, $password){
             echo "hhdhd";
         }
     }
+    $_SESSION['user'] = $name;
 
     fclose($file);
 
@@ -56,7 +57,7 @@ function Register($username, $password){
 
     while(!feof($file)){
         $row = fgets($file);
-        list($user) = explode(";", $row);
+        list($user, $pass) = explode(";", $row);
 
         if(strcmp($username, $user) == 0){
             $conf = false;
@@ -65,8 +66,9 @@ function Register($username, $password){
 
     if($conf){
         header("location: home.php");
-        $newUser = "$username;$password\n";
+        $newUser = "$username;$password;\n";
         fwrite($file, $newUser);
+        $_SESSION['user'] = $username;
     }else{
         echo "<p class='red-text'>Utente già registrato</p>";
         
