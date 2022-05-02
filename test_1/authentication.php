@@ -15,40 +15,6 @@ function Login($name, $password){
     $_SESSION['user'] = $name;
 
     fclose($file);
-
-    
-
-    /*$conf = 0;
-
-    $userfile= file_get_contents("./logs/logs.txt");
-
-    $users = explode("\n",$userfile);
-
-    foreach ($users as $user) {
-        list($username, $pass) = explode(";", $user);
-
-        if((strcmp($name, $username) == 0)){
-            if(strcmp($password, $pass) == 0){
-                $conf = 1;
-            }
-        }
-        
-    }
-    if($conf){
-        header("location: home.php");
-    }else{
-        echo "<p class='red-text'>Utente già registrato</p>";
-    }*/
-
-    /*while(!feof($file)){
-        $row = fgets($file);
-        $array = explode(";", $row);
-
-        if(($array[0] == $name) && ($array[1] == $password)){
-            $conf = false;
-        }
-    }*/
-    
 }
 
 function Register($username, $password){
