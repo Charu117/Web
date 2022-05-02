@@ -6,10 +6,8 @@ function Login($name, $password){
     while (!feof($file)) {
         $user = fgets($file);
         list($part1,$part2) = explode(";", $user);
-        echo "$part1;$part2<br>";
         if((strcmp($part1,$name) === 0) && (strcmp($part2,$password) === 0)){
             header("location: home.php");
-            echo "hhdhd";
         }
     }
     $_SESSION['user'] = $name;
