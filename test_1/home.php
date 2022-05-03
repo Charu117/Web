@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
 <nav>
@@ -22,7 +22,7 @@
   </nav>
 
   <div>
-        <h4 class="header1">BENVENUTO ALLA PAGINA HOME, <?php echo $_SESSION['user'];?>!</h4>
+        <h4 class="header1">Benvenuto alla pagina home, <?php echo $_SESSION['user'];?>!</h4>
         <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aliquam animi explicabo voluptate voluptatem doloribus, blanditiis nisi praesentium. Amet dolorum voluptates quas quos! In eaque corporis perspiciatis ad modi alias.</blockquote>
   </div>
 

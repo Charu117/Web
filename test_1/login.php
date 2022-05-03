@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Document</title>
+    <title>Log In</title>
 </head>
 <body>
 <nav>
@@ -26,12 +26,12 @@
       <form class="col s12" method="post">
           <div class="row">
             <div class="input-field col s6">
-              <input name="name" type="text" class="validate" placeholder="Username"> 
+              <input name="name" type="text" class="validate" placeholder="Username" required> 
             </div>
             </div>
             <div class="row">
             <div class="input-field col s6">
-              <input type="password" class="validate" name="password" id="password" placeholder="Password">
+              <input type="password" class="validate" name="password" id="password" placeholder="Password" required>
               <p>
                 <label>
                   <input type="checkbox" onclick="pass_visibility()"/>
@@ -60,9 +60,9 @@
 </script>
 
 <?php include 'authentication.php';
-  $sub = isset($_POST['sub']) ? true : false;
+  $sub = isset($_POST['sub']) ? true : false; // if to check if the submit is done 
 
-  if($sub == true){
+  if($sub == true){ /* checking if the submit button is clicked */
     echo $_REQUEST['name'];
     Login($_REQUEST['name'], $_REQUEST['password']);
   }

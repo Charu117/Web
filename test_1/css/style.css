@@ -1,25 +1,23 @@
-.input-field input[type=text]:focus + label {
+/* .input-field input[type=text]:focus + label {
   color: #000;
-}
+} */
 /* label underline focus color */
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #9575cd !important;
   box-shadow: 0 1px 0 0 #9575cd !important;
 }
 
-.input-field input:focus + label {
-  color: #9575cd !important;
-}
 /* label underline focus color */
 .row .input-field input:focus {
   border-bottom: 1px solid #9575cd !important;
   box-shadow: 0 1px 0 0 #9575cd !important;
 }
-
+/* tag a*/
 a{
   color: #7e57c2 !important;
   display: inline-block;
 }
+/*tag i */
 i{
   padding-left: 12px;
 }
@@ -27,6 +25,7 @@ i{
 .row {
   margin-bottom: 3px;
 }
+/* headelines */
 .header{
   padding-left: 12px;
   padding-top: 15px;
@@ -50,13 +49,16 @@ i{
   margin-top: 10px;
   margin-left: 200px;
 }
+/* alignment form of the login */
 .form-login{
   margin-left: 30%;
 }
+/* alignment form of the registration */
 .form-register{
   margin-left: 30%;
 
 }
+/* alignment submit buttons */
 .button{
   margin-left: 40%;
 }

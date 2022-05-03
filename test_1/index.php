@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Document</title>
+    <title>Website</title>
 </head>
 <body>
     <nav>
@@ -22,7 +22,7 @@
   </nav>
 
   <div>
-      <h4 class="header1" >PAGINA PRINCIPALE</h4>
+      <h4 class="header1" >Pagina principale</h4>
       <blockquote>Per accedere all'area riservata fai login oppure registrati</blockquote>
   </div>
 
