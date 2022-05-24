@@ -1,3 +1,14 @@
+<?php include './logic/functions.php';
+$submit = isset($_POST['submit_btn']) ? true: false;
+
+if($submit){
+    $user = new User(" ", " ", $_REQUEST['email'], $_REQUEST['password']);
+    $result = logIn($user);
+    if(!$result){
+        echo "<p class='red-text'>Something's wrong.</p>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,16 +68,5 @@
         </div>
     </form>
 </div>
-<?php include './logic/functions.php';
-  $submit = isset($_POST['submit_btn']) ? true: false;
-
-  if($submit){
-    $user = new User(" ", " ", $_REQUEST['email'], $_REQUEST['password']);
-    $result = logIn($user);
-    if($result == false){
-      echo "<p class='red-text'>Something's wrong.</p>";
-    }
-  }
-?>
 </body>
 </html>

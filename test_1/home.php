@@ -14,7 +14,7 @@
 <body>
 <nav>
     <div class="nav-wrapper deep-purple lighten-5">
-        <a href="index.php"><i class="material-icons">free_breakfast</i></a>
+        <a href="home.php"><i class="material-icons">free_breakfast</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="index.php">Log out </a></li>
         </ul>

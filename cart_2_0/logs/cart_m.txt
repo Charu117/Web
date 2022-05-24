@@ -1,0 +1,3 @@
+hello@gmail.com;10;0;3;0
+charu@gmail.com;8;2;2;0
+qq@gmail.com;0;5;0;0
