@@ -1,3 +1,15 @@
+<?php include './logic/functions.php';
+
+if(isset($_POST['register'])){
+    $user = new User($_REQUEST['f_name'], $_REQUEST['l_name'], $_REQUEST['email'], $_REQUEST['password']);
+    if($_POST['password'] == $_POST['conf_password']){
+        $result = register($user);
+        if(!$result){
+            echo "<p class='red-text'>User already registered, try logging In!</p>";
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +42,10 @@
     </ul>
   </div>
 </nav>
+<div class="text-center">
+    <h3>Registration</h3>
+    <small class="text-muted">Register now, and join our BookStore family!</small>
+</div>
 <div class="container">
     <form method="POST">
     <div class="row justify-content-md-center">
@@ -45,58 +61,34 @@
             </div>
         </div>
 
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center" style="margin-top: 1rem">
             <div class="col col-lg-5">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <input type="email" class="form-control" id="email" name="email" required>
+
             </div>
         </div>
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center" style="margin-top: 1rem">
             <div class="col col-lg-5">
                 <label for="Password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="Password" name="password">
+                <input type="password" class="form-control" id="Password" name="password" max="6" required>
             </div>
         </div>
-        <!--
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-5 form-check">
-                <input type="checkbox" class="form-check-input" id="showPassword">
-                <label class="form-check-label" for="Check">Show password</label>
-            </div>
-        </div>
-        -->
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center" style="margin-top: 1rem">
             <div class="col col-lg-5">
                 <label for="conf_password" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="conf_pass" name="conf_password">
+                <input type="password" class="form-control" id="conf_pass" name="conf_password" max="6" required>
             </div>
         </div>
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-5 form-check">
-                <input type="checkbox" class="form-check-input" id="showPassword">
-                <label class="form-check-label" for="Check">Show password</label>
-            </div>
-        </div>
-        
-        <div class="row justify-content-md-center">
-            <div class="col col-md-auto d-grid gap-2">
+        <div class="row justify-content-md-center" style="margin-top: 1rem">
+            <div class="col col-lg-5 d-grid gap-2">
                 <button type="submit" class="btn btn-primary" name="register">Register</button>
             </div>
         </div>
     </form>
 </div>
-<?php include './logic/functions.php';
-$submit = isset($_POST['register']) ? true : false;
-if($submit){
-  $user = new User($_REQUEST['f_name'], $_REQUEST['l_name'], $_REQUEST['email'], $_REQUEST['password']);
-    if($_POST['password'] == $_POST['conf_password']){
-      $result = register($user);
-      if($result == false){
-        echo "<p class='red-text'>User already registered, try logging In!</p>";
-      }
-    }
-}
-?>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

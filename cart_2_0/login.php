@@ -1,7 +1,6 @@
 <?php include './logic/functions.php';
-$submit = isset($_POST['submit_btn']) ? true: false;
 
-if($submit){
+if(isset($_POST['submit_btn'])){
     $user = new User(" ", " ", $_REQUEST['email'], $_REQUEST['password']);
     $result = logIn($user);
     if(!$result){
@@ -40,30 +39,31 @@ if($submit){
     </ul>
   </div>
 </nav>
+<div class="text-center">
+    <h3>Log in</h3>
+    <small class="text-muted">Log in and browse our books.</small>
+</div>
 <div class="container">
     <form method="POST">
         <div class="row justify-content-md-center">
             <div class="col col-lg-5">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <input type="email" class="form-control" id="email" name="email" required>
+
             </div>
         </div>
         <div class="row justify-content-md-center">
             <div class="col col-lg-5">
                 <label for="Password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="Password" name="password">
+                <input type="password" class="form-control" id="Password" name="password" max="6">
             </div>
         </div>
-        <div class="row justify-content-md-center">
-            <div class="col col-lg-5 form-check">
-                <input type="checkbox" class="form-check-input" id="showPassword">
-                <label class="form-check-label" for="Check">Show password</label>
-            </div>
-        </div>
-        <div class="row justify-content-md-center">
-            <div class="col col-md-auto d-grid gap-2">
-                <button type="submit" class="btn btn-primary" name="submit_btn">Log In</button>
+        <div class="row justify-content-md-center" style="margin-top: 1rem">
+            <div class="col col-lg-5">
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary" name="submit_btn">Log In</button>
+                </div>
+
             </div>
         </div>
     </form>

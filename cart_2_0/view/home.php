@@ -1,4 +1,6 @@
-<?php ob_start();
+<?php //session_start();
+error_reporting(0);
+ini_set('display_errors', 0);
 
 include('../logic/functions.php');
 include('../logic/cart_functions.php');
@@ -15,6 +17,10 @@ $arr_products = array(
     'the_body' => 0,
     'living' => 0,
     'whyH' => 0,
+    'book-lover' => 0,
+    'why_i_stand' => 0,
+    'risk' => 0,
+    'sailor' => 0
 );
 if (isset($_POST['sub_power'])) {
     $arr_products['power'] = $_POST['quantity-power'];
@@ -28,7 +34,19 @@ if (isset($_POST['living'])){
 if (isset($_POST['why_has'])){
     $arr_products['whyH'] = $_POST['quantity-whyH'];
 }
-if ((isset($_POST['sub_power'])) || (isset($_POST['the_body'])) || (isset($_POST['living'])) || (isset($_POST['why_has']))){
+if (isset($_POST['sub_book_lover'])){
+    $arr_products['book-lover'] = $_POST['quantity-book-lover'];
+}
+if (isset($_POST['sub_why_i'])){
+    $arr_products['why_i_stand'] = $_POST['quantity-why-i'];
+}
+if (isset($_POST['sub_risk'])){
+    $arr_products['risk'] = $_POST['quantity-risk'];
+}
+if (isset($_POST['sub_sailor'])){
+    $arr_products['sailor'] = $_POST['quantity-sailor'];
+}
+if ((isset($_POST['sub_power'])) || (isset($_POST['the_body'])) || (isset($_POST['living'])) || (isset($_POST['why_has'])) || (isset($_POST['sub_book_lover']) || (isset($_POST['sub_why_i'])) || (isset($_POST['sub_risk'])) || (isset($_POST['sub_sailor'])))){
     add_to_file($arr_products);
 }
 ?>
@@ -45,7 +63,7 @@ if ((isset($_POST['sub_power'])) || (isset($_POST['the_body'])) || (isset($_POST
     <title>Book Store</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="../images/auto_stories_black_24dp.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -66,56 +84,149 @@ if ((isset($_POST['sub_power'])) || (isset($_POST['the_body'])) || (isset($_POST
     </ul>
   </div>
 </nav>
-<div class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col">
-        <div class="card" style="width: 15rem;">
-            <img src="../images/power.jpeg" class="card-img-top" alt="..." width="60" height="300">
-            <div class="card-body">
-                <h6 class="card-title">The 48 Laws of Power</h6>
-                <form method="post">
-                    <input class="form-control" type="number" id="quantity-power" name="quantity-power" placeholder="Qty" min="1" max="10">
-                    <button class="btn btn-secondary" type="submit" name="sub_power">add to cart</button>
-                </form>
+<div class="products">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card" style="width: 15rem;">
+                <img src="../images/power.jpeg" class="card-img-top" alt="..." style="width: 240px;height: 300px">
+                <div class="card-body">
+                    <h6 class="card-title">The 48 Laws of Power</h6>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="number" id="quantity-power" name="quantity-power" placeholder="Qty" min="1" max="10">
+                            <button class="btn btn-outline-secondary" type="submit" name="sub_power">
+                                <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                            </button>
+                        </div>
+                    </form>
+                    <div><small class="text-muted">19.82€</small></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 15rem;">
-            <img src="../images/the_body.jpeg" class="card-img-top" alt="..." width="60" height="300">
-            <div class="card-body">
-                <h6 class="card-title">The body keeps the score</h6>
-                <form method="post">
-                    <input class="form-control" type="number" id="quantity-power" name="quantity-the-body" placeholder="Qty" min="1" max="10">
-                    <button class="btn btn-secondary" type="submit" name="the_body">add to cart</button>
-                </form>
+        <div class="col">
+            <div class="card" style="width: 15rem;">
+                <img src="../images/the_body.jpeg" class="card-img-top" alt="..." style="width: 240px;height: 300px">
+                <div class="card-body">
+                    <h6 class="card-title">The body keeps the score</h6>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="number" id="quantity-power" name="quantity-the-body" placeholder="Qty" min="1" max="10">
+                            <button class="btn btn-outline-secondary" type="submit" name="the_body">
+                                <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                            </button>
+                        </div>
+                    </form>
+                    <div><small class="text-muted">18.85€</small></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 15rem;">
-            <img src="../images/living.jpeg" class="card-img-top" width="60" height="300">
-            <div class="card-body">
-                <h6 class="card-title">Living Untethered</h6>
-                <form method="post">
-                    <input class="form-control" type="number" id="quantity-power" name="quantity-living" placeholder="Qty" min="1" max="10">
-                    <button class="btn btn-secondary" type="submit" name="living">add to cart</button>
-                </form>
+        <div class="col">
+            <div class="card" style="width: 15rem;">
+                <img src="../images/living.jpeg" class="card-img-top" style="width: 240px;height: 300px">
+                <div class="card-body">
+                    <h6 class="card-title">Living Untethered</h6>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="number" id="quantity-power" name="quantity-living" placeholder="Qty" min="1" max="10">
+                            <button class="btn btn-outline-secondary" type="submit" name="living">
+                                <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                            </button>
+                        </div>
+                    </form>
+                    <div><small class="text-muted">20.50€</small></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card" style="width: 15rem;">
+                <img src="../images/why_has.jpeg" class="card-img-top" style="width: 240px;height: 300px">
+                <div class="card-body">
+                    <h6 class="card-title">Why Has Nobody Told...</h6>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="number" id="quantity-whyH" name="quantity-whyH" placeholder="Qty" min="1" max="10">
+                            <button class="btn btn-outline-secondary" type="submit" name="why_has">
+                                <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                            </button>
+                        </div>
+                    </form>
+                    <div><small class="text-muted">19.99€</small></div>
+                </div>
             </div>
         </div>
     </div>
 
+<div class="row row-cols-1 row-cols-md-4 g-4">
     <div class="col">
         <div class="card" style="width: 15rem;">
-            <img src="../images/why_has.jpeg" class="card-img-top" width="60" height="300">
+            <img src="../images/book_lovers.jpeg" class="card-img-top" alt="..." style="width: 240px;height: 300px">
             <div class="card-body">
-                <h6 class="card-title">Why Has Nobody Told Me This Before?</h6>
+                <h6 class="card-title">Book Lovers</h6>
                 <form method="post">
-                    <input class="form-control" type="number" id="quantity-power" name="quantity-whyH" placeholder="Qty" min="1" max="10">
-                    <button class="btn btn-secondary" type="submit" name="why_has">add to cart</button>
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="number" id="quantity-book-lover" name="quantity-book-lover" placeholder="Qty" min="1" max="10">
+                        <button class="btn btn-outline-secondary" type="submit" name="sub_book_lover">
+                            <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                        </button>
+                    </div>
                 </form>
+                <div><small class="text-muted">19.99€</small></div>
             </div>
         </div>
     </div>
+    <div class="col">
+        <div class="card" style="width: 15rem;">
+            <img src="../images/why_i_stand.jpg" class="card-img-top" alt="..." style="width: 240px;height: 300px">
+            <div class="card-body">
+                <h6 class="card-title">Why I Stand</h6>
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="number" id="quantity-why-i" name="quantity-why-i" placeholder="Qty" min="1" max="10">
+                        <button class="btn btn-outline-secondary" type="submit" name="sub_why_i">
+                            <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                        </button>
+                    </div>
+                </form>
+                <div><small class="text-muted">18.99€</small></div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 15rem;">
+            <img src="../images/risk.jpeg" class="card-img-top" alt="..." style="width: 240px;height: 300px">
+            <div class="card-body">
+                <h6 class="card-title">To Risk it all</h6>
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="number" id="quantity-risk" name="quantity-risk" placeholder="Qty" min="1" max="10">
+                        <button class="btn btn-outline-secondary" type="submit" name="sub_risk">
+                            <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                        </button>
+                    </div>
+                </form>
+                <div><small class="text-muted">19.99€</small></div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 15rem;">
+            <img src="../images/sailor.jpeg" class="card-img-top" alt="..." style="width: 240px;height: 300px">
+            <div class="card-body">
+                <h6 class="card-title">Sailor's bookshelf</h6>
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="number" id="quantity-sailor" name="quantity-sailor" placeholder="Qty" min="1" max="10">
+                        <button class="btn btn-outline-secondary" type="submit" name="sub_sailor">
+                            <img src="../node_modules/bootstrap-icons/icons/bag-plus.svg">
+                        </button>
+                    </div>
+                </form>
+                <div><small class="text-muted">20.10€</small></div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <script>
     if (window.history.replaceState) {

@@ -10,7 +10,7 @@
     <title>Book Store</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
       <img src="./images/auto_stories_black_24dp.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -29,5 +29,54 @@
     </ul>
   </div>
 </nav>
+<div class="text-center" style="margin-top: 5rem">
+    <h3>Welcome to our BookStore</h3>
+    <p>To browse and buy our products please join our family by logging In or registering.</p>
+
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: 50rem; margin-bottom: 10rem;">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/grey_background.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <img src="images/sailor.jpeg">
+                        <h5>New arrivals</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/grey_background.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <img src="images/why_i_stand.jpg">
+                        <h5>New arrivals</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/grey_background.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <img src="images/book_lovers.jpeg">
+                        <h5>New Arrivals</h5>
+
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

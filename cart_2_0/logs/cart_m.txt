@@ -1,3 +1,9 @@
-hello@gmail.com;10;0;3;0
-charu@gmail.com;8;2;2;0
-qq@gmail.com;0;5;0;0
+#email;power;the_body;living;why_has;book-lover;why_i_stand;risk;sailor;
+hello@gmail.com;10;0;3;0;0;0;0;0;
+qq@gmail.com;0;5;0;0;0;0;0;0;
+ddd@gmail.com;1;8;0;9;0;0;0;0;
+sathsaranifernando001@gmail.com;5;6;0;0;0;0;0;0;
+qiqi@gmail.com;2;8;3;0;0;0;0;0;
+keqing@gmail.com;7;9;0;0;0;0;0;0;
+charr.fernando@gmail.com;4;6;7;5;5;5;5;9;
+ros@gmail.com;0;0;0;0;0;0;0;0;
